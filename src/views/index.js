@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import '../App.css';
+import '../App.scss';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import FormUser from '../components/form';
@@ -19,7 +19,10 @@ class ViewMain extends Component {
             </div>
         </Col>
         <Col md={6} style={{ padding: '50px' }}>
-            <div style={{ background: 'white', display: 'flex', padding: '20px' }}>
+            <div style={{background: 'white', display: 'flex', padding: '20px' }}>
+                casa 
+      </div>
+      <div className="casa">
                 casa 
       </div>
         </Col>
