@@ -1,9 +1,7 @@
-import { UPDATE_ARRAY,UPDATE_DATA_TO_SHOW,UPDATE_DATA } from '../constants'
-import countriesApi from '../services/api'
+import { UPDATE_ARRAY, UPDATE_DATA_TO_SHOW, UPDATE_DATA } from '../constants'
 
 export const setHistoric = () => {
     return (dispatch, getState) => {
-        console.log(getState())
         dispatch(updateData(true, 'ready'));
         dispatch(updateArray(getState().userApp.user));
         dispatch(updateDataToShow(getState().userApp.user));

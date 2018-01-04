@@ -29,17 +29,13 @@ class InputCountry extends Component {
             }).catch((err) => console.log(err))
     }
     handleChange(event) {
-        console.log(event.target.value)
         this.props.updateData(event.target.value, 'country');
-        this.setState({country: event.target.value});
-      }
+        this.setState({ country: event.target.value });
+    }
 
     render() {
-        console.log(this);
         return (
-            
             <label className="clabel">
-            
                 <Col className="cCol" md={4}>
                     Pais:
                 </Col>

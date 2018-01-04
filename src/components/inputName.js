@@ -12,12 +12,10 @@ class InputName extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
-        console.log(event.target.value)
         this.props.updateData(event.target.value, 'name');
         this.setState({ name: event.target.value });
     }
     render() {
-        console.log(this);
         return (
             <label className="clabel">
                 <Col className="cCol" md={4}><b>Name:</b></Col>

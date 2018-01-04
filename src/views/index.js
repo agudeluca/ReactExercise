@@ -21,11 +21,10 @@ class ViewMain extends Component {
                 </Col>
                 <Col md={6} className="cColpad">
                     <div className="listHistoric cContainer">
-                       <HistoricList />
+                        <HistoricList />
                     </div>
                 </Col>
             </div>
-
         );
     }
 }

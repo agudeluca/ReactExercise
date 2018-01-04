@@ -11,11 +11,10 @@ class FormUser extends Component {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleSubmit(){
+    handleSubmit() {
         this.props.setHistoric();
     }
     render() {
-        console.log(this);
         return (
             <form>
                 <InputName />

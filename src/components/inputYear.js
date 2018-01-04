@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 class InputName extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             age: ''
@@ -12,17 +12,15 @@ class InputName extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
-        console.log(event.target.value)
         this.props.updateData(event.target.value, 'age');
-        this.setState({age: event.target.value});
-      }
+        this.setState({ age: event.target.value });
+    }
     render() {
-        console.log(this);
         return (
             <label className="clabel">
                 <Col className="cCol" md={4}>Edad:</Col>
                 <Col md={8} className="cCol">
-                    <input className="cInput" type="number" onChange={this.handleChange} value={this.state.age}  />
+                    <input className="cInput" type="number" onChange={this.handleChange} value={this.state.age} />
                 </Col>
             </label>
         );
@@ -30,6 +28,5 @@ class InputName extends Component {
 }
 const mapStateToProps = state => {
     return { userApp: state.userApp }
-  }
-  export default connect(mapStateToProps, actions)(InputName)
-  
+}
+export default connect(mapStateToProps, actions)(InputName)
