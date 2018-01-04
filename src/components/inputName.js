@@ -20,7 +20,7 @@ class InputName extends Component {
             <label className="clabel">
                 <Col className="cCol" md={4}><b>Name:</b></Col>
                 <Col md={8} className="cCol">
-                    <input style={{ flex: 1 }} type="text" onChange={this.handleChange} value={this.state.name} />
+                    <input className="cInput" type="text" onChange={this.handleChange} value={this.state.name} />
                 </Col>
             </label>
         );

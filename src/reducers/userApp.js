@@ -10,7 +10,7 @@ const initialState = {
     month: (new Date().getMonth() + 1),
     country: null,
     date: new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getFullYear(),
-    year:new Date().getFullYear()
+    year: new Date().getFullYear()
   }
 }
 export default function (state = initialState, action) {
@@ -21,7 +21,7 @@ export default function (state = initialState, action) {
       duplicateState.user[action.id] = action.data
       return duplicateState
 
-      case UPDATE_DATA_TO_SHOW:
+    case UPDATE_DATA_TO_SHOW:
       var duplicateState = Object.assign({}, state)
       duplicateState.userToShow = Object.assign({}, action.data)
       return duplicateState
