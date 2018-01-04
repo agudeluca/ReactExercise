@@ -1,5 +1,5 @@
 
 ## Instrucciones para deploy
 
-npm install
-npm start <br>
+npm install <br>
+npm start
