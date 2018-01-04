@@ -1,17 +1,6 @@
 import { UPDATE_ARRAY,UPDATE_DATA_TO_SHOW,UPDATE_DATA } from '../constants'
 import countriesApi from '../services/api'
 
-
-
-export const getCountries = () => {
-    return (dispatch, getState) => {
-        countriesApi('https://restcountries.eu/rest/v2/all')
-            .then(([response, json]) => {
-                dispatch(updateData(json, 'countries'));
-                console.log("hola");
-            }).catch((err) => console.log(err))
-    }
-}
 export const setHistoric = () => {
     return (dispatch, getState) => {
         console.log(getState())

@@ -3,7 +3,7 @@ import '../App.scss';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-
+import api from '../services/api'
 class InputCountry extends Component {
     constructor(props) {
         super(props)
@@ -15,8 +15,7 @@ class InputCountry extends Component {
     }
 
     componentDidMount() {
-        fetch('https://restcountries.eu/rest/v2/all', { method: 'GET' })
-            .then(response => Promise.all([response, response.json()]))
+        api('https://restcountries.eu/rest/v2/all')
             .then(([response, json]) => {
                 this.props.updateData(json[0].name, 'country');
                 this.setState({
