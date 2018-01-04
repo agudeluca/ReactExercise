@@ -7,7 +7,7 @@ import FormUser from '../components/form';
 import * as actions from '../actions';
 class ViewMain extends Component {
     componentWillMount() {
-        console.log("holaa");
+       
         console.log(this);
     }
     render() {

@@ -15,8 +15,8 @@ export const getCountries = () => {
     return (dispatch, getState) => {
         countriesApi('https://restcountries.eu/rest/v2/all')
             .then(([response, json]) => {
-
                 dispatch(updateData(json, 'countries'));
+                console.log("hola");
             }).catch((err) => console.log(err))
     }
 }

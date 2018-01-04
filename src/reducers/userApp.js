@@ -1,8 +1,8 @@
 import { FETCHING_DATAFAILUTE, FETCH_DATA, UPDATE_DATA } from '../constants'
 const initialState ={
-  "countries": null,
-   "birthday": null,
+   "currentViewer": null,
   "age": null,
+  "selectedCountry": null,
 
 
 }
