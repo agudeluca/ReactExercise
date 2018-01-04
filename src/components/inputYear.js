@@ -25,6 +25,7 @@ class InputName extends Component {
                     <input style={{flex: 1}} type="number" onChange={this.handleChange} value={this.state.age}  />
                 </Col>
             </label>
+          
         );
     }
 }

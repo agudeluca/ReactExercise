@@ -28,3 +28,9 @@ export const updateData = (data, id) => {
         id
     }
 }
+export const addTodo = (data) => {
+    return {
+        type: 'ADD_TODO',
+        data
+    }
+}

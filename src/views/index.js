@@ -6,11 +6,14 @@ import { connect } from 'react-redux';
 import FormUser from '../components/form';
 import * as actions from '../actions';
 class ViewMain extends Component {
-    componentWillMount() {
-       
-        console.log(this);
+    constructor(props){
+        super(props)
+        this.state = {
+
+        }
     }
     render() {
+        console.log(this.props.userApp.currentViewer);
         return (
         <div className="App">
         <Col md={6} style={{ padding: '50px' }}>
@@ -20,10 +23,10 @@ class ViewMain extends Component {
         </Col>
         <Col md={6} style={{ padding: '50px' }}>
             <div style={{background: 'white', display: 'flex', padding: '20px' }}>
-                casa 
+            <p>cas {this.props.userApp.currentViewer}</p>
       </div>
       <div className="casa">
-                casa 
+                casa <p>{this.props.userApp.temp}</p>
       </div>
         </Col>
     </div>
