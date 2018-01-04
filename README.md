@@ -2,4 +2,4 @@
 ## Instrucciones para deploy
 
 npm install
-npm start
+npm start <br>
