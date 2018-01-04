@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import ViewMain from './views';
-
-import store from './stores';
+import configureStore from './stores';
 import { Provider } from 'react-redux';
+let store = configureStore();
 class App extends Component {
 
   render() {

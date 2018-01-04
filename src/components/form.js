@@ -18,6 +18,6 @@ class FormUser extends Component {
     }
 }
 const mapStateToProps = state => {
-    return { userData: state.userData }
+    return { userApp: state.userApp }
 }
 export default connect(mapStateToProps, actions)(FormUser)

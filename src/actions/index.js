@@ -1,39 +1,30 @@
-import { SET_TOKEN_ACCESS, UPDATE_DATA, GET_USER,FETCHING_DATA } from '../constants'
-export const set_token_access = (token) => {
-    return {
-        type: SET_TOKEN_ACCESS,
-        token
-    }
-}
-export const getUser = (data) => {
-    return {
-        type: GET_USER,
-        data
-    }
-}
-export const updateData = (data, id) => {
-    return {
-        type: UPDATE_DATA,
-        data,
-        id
-    }
-}
+import { FETCHING_DATAFAILUTE, FETCH_DATA } from '../constants'
+import countriesApi from '../services/api'
 
 export const getData = () => {
     return {
-        type: FETCHING_DATA,
-
-    }
-}
-export const getDataSuccess = (data) => {
-    return {
-        type: 'FETCHING_DATA_SUCCESS',
-        data
+        type: FETCH_DATA,
     }
 }
 export const getDataFailure = () => {
     return {
-        type: 'FETCHING_DATAFAILUTE'
+        type: FETCHING_DATAFAILUTE
+    }
+}
+export const getCountries = () => {
+    return (dispatch, getState) => {
+        countriesApi('https://restcountries.eu/rest/v2/all')
+            .then(([response, json]) => {
+
+                dispatch(updateData(json, 'countries'));
+            }).catch((err) => console.log(err))
     }
 }
 
+export const updateData = (data, id) => {
+    return {
+        type: 'UPDATE_DATA',
+        data,
+        id
+    }
+}

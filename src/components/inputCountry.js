@@ -4,6 +4,10 @@ import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 class InputCountry extends Component {
+    constructor(props) {
+        super(props)
+        console.log(this.props.getCountries());
+      }
     render() {
         console.log(this);
         return (
@@ -17,13 +21,12 @@ class InputCountry extends Component {
                         <option value="grapefruit">Grapefruit</option>
                     </select>
                 </Col>
-            </label>
-          
+            </label> 
         );
     }
 }
 const mapStateToProps = state => {
-    return { userData: state.userData }
+    return { userApp: state.userApp }
   }
   export default connect(mapStateToProps, actions)(InputCountry)
   

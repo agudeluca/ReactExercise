@@ -32,6 +32,6 @@ class ViewMain extends Component {
     }
 }
 const mapStateToProps = state => {
-    return { userData: state.userData }
+    return { userApp: state.userApp }
 }
 export default connect(mapStateToProps, actions)(ViewMain)
