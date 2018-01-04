@@ -3,18 +3,42 @@
   display: flex;
   flex-direction: row; }
 
-.casa {
-  color: #700033; }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px; }
+
+.clabel {
+  display: block; }
+
+.listHistoric {
+  display: flex; }
+
+.cContainer {
+  padding: 20px;
+  background: white; }
+
+.cCol {
+  display: flex; }
+
+.cColpad {
+  padding: 50px; }
+
+.cInput {
+  flex: 1; }
+
+.cSelect {
+  width: 100%; }
 
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white; }
+
+.cButton {
+  margin: 20px;
+  left: 30%;
+  position: relative; }
 
 .App-title {
   font-size: 1.5em; }

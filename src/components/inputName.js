@@ -4,25 +4,25 @@ import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 class InputName extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            currentViewer: ''
+            name: ''
         }
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
         console.log(event.target.value)
-        this.props.updateData(event.target.value, 'currentViewer');
-        this.setState({currentViewer: event.target.value});
-      }
+        this.props.updateData(event.target.value, 'name');
+        this.setState({ name: event.target.value });
+    }
     render() {
         console.log(this);
         return (
-            <label style={{ display: 'block' }}>
-                <Col style={{ display: 'flex' }} md={4}>Name:</Col>
-                <Col md={8} style={{ display: 'flex' }}>
-                    <input style={{flex: 1}} type="text" onChange={this.handleChange} value={this.state.currentViewer}  />
+            <label className="clabel">
+                <Col className="cCol" md={4}><b>Name:</b></Col>
+                <Col md={8} className="cCol">
+                    <input style={{ flex: 1 }} type="text" onChange={this.handleChange} value={this.state.name} />
                 </Col>
             </label>
         );
@@ -30,6 +30,5 @@ class InputName extends Component {
 }
 const mapStateToProps = state => {
     return { userApp: state.userApp }
-  }
-  export default connect(mapStateToProps, actions)(InputName)
-  
+}
+export default connect(mapStateToProps, actions)(InputName)

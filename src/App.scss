@@ -1,23 +1,48 @@
+//constants
 $primary-color: #700033;
+$backgroundBox-color: white;
+
+
 .App {
   text-align: center;
   display:flex; flex-direction:row;
-}
-.casa{
-  color: $primary-color
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.clabel{
+  display: block;
 
+}
+.listHistoric{ 
+    display: flex
+  }
+.cContainer{
+  padding: 20px;
+  background: $backgroundBox-color;
+}
+.cCol{
+  display: flex;
+}
+.cColpad{ 
+  padding: 50px
+ }
+.cInput{flex: 1}
+.cSelect{
+  width: 100%
+}
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: $backgroundBox-color;
 }
-
+.cButton{
+  margin: 20px;
+  left: 30%;
+  position: relative;
+}
 .App-title {
   font-size: 1.5em;
 }

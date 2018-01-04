@@ -5,18 +5,23 @@ import InputName from './inputName'
 import InputCountry from './inputCountry'
 import InputYear from './inputYear'
 import * as actions from '../actions';
+import { Button } from 'react-bootstrap';
 class FormUser extends Component {
+    constructor(props) {
+        super(props)
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     handleSubmit(){
         this.props.setHistoric();
     }
     render() {
         console.log(this);
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form>
                 <InputName />
                 <InputCountry />
                 <InputYear />
-                <input type="submit" value="Submit" />
+                <Button className="cButton" onClick={this.handleSubmit} bsStyle="primary">Saludar</Button>
             </form>
         );
     }

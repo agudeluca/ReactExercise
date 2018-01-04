@@ -1,16 +1,8 @@
-import { FETCHING_DATAFAILUTE, FETCH_DATA } from '../constants'
+import { UPDATE_ARRAY,UPDATE_DATA_TO_SHOW,UPDATE_DATA } from '../constants'
 import countriesApi from '../services/api'
 
-export const getData = () => {
-    return {
-        type: FETCH_DATA,
-    }
-}
-export const getDataFailure = () => {
-    return {
-        type: FETCHING_DATAFAILUTE
-    }
-}
+
+
 export const getCountries = () => {
     return (dispatch, getState) => {
         countriesApi('https://restcountries.eu/rest/v2/all')
@@ -20,17 +12,31 @@ export const getCountries = () => {
             }).catch((err) => console.log(err))
     }
 }
+export const setHistoric = () => {
+    return (dispatch, getState) => {
+        console.log(getState())
+        dispatch(updateData(true, 'ready'));
+        dispatch(updateArray(getState().userApp.user));
+        dispatch(updateDataToShow(getState().userApp.user));
+    }
+}
 
+export const updateDataToShow = (data) => {
+    return {
+        type: UPDATE_DATA_TO_SHOW,
+        data,
+    }
+}
 export const updateData = (data, id) => {
     return {
-        type: 'UPDATE_DATA',
+        type: UPDATE_DATA,
         data,
         id
     }
 }
-export const addTodo = (data) => {
+export const updateArray = (data) => {
     return {
-        type: 'ADD_TODO',
+        type: UPDATE_ARRAY,
         data
     }
 }

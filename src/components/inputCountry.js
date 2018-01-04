@@ -9,7 +9,7 @@ class InputCountry extends Component {
         super(props)
         this.state = {
             countries: [],
-            selectedCountry: ""
+            country: ""
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -18,7 +18,7 @@ class InputCountry extends Component {
         fetch('https://restcountries.eu/rest/v2/all', { method: 'GET' })
             .then(response => Promise.all([response, response.json()]))
             .then(([response, json]) => {
-                this.props.updateData(json[0].name, 'selectedCountry');
+                this.props.updateData(json[0].name, 'country');
                 this.setState({
                     countries: json.map((element, index) => {
                         return (
@@ -31,19 +31,21 @@ class InputCountry extends Component {
     }
     handleChange(event) {
         console.log(event.target.value)
-        this.props.updateData(event.target.value, 'selectedCountry');
-        this.setState({selectedCountry: event.target.value});
+        this.props.updateData(event.target.value, 'country');
+        this.setState({country: event.target.value});
       }
 
     render() {
         console.log(this);
         return (
-            <label style={{ display: 'block' }}>
-                <Col style={{ display: 'flex' }} md={4}>
+            
+            <label className="clabel">
+            
+                <Col className="cCol" md={4}>
                     Pais:
                 </Col>
-                <Col md={8} style={{ display: 'flex' }}>
-                    <select onChange={this.handleChange} value={this.state.selectedCountry} style={{ flex: 1 }}>
+                <Col md={8} className="cCol">
+                    <select onChange={this.handleChange} value={this.state.country} className="cSelect">
                         {this.state.countries}
                     </select>
                 </Col>

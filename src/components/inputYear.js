@@ -19,13 +19,12 @@ class InputName extends Component {
     render() {
         console.log(this);
         return (
-            <label style={{ display: 'block' }}>
-                <Col style={{ display: 'flex' }} md={4}>Name:</Col>
-                <Col md={8} style={{ display: 'flex' }}>
-                    <input style={{flex: 1}} type="number" onChange={this.handleChange} value={this.state.age}  />
+            <label className="clabel">
+                <Col className="cCol" md={4}>Edad:</Col>
+                <Col md={8} className="cCol">
+                    <input className="cInput" type="number" onChange={this.handleChange} value={this.state.age}  />
                 </Col>
             </label>
-          
         );
     }
 }
