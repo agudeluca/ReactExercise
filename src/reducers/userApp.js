@@ -1,7 +1,8 @@
-import { UPDATE_DATA, UPDATE_ARRAY, UPDATE_DATA_TO_SHOW } from '../constants'
+import { UPDATE_DATA, UPDATE_ARRAY, UPDATE_DATA_TO_SHOW,UPDATE_COUNTRIES } from '../constants'
 const initialState = {
   userToShow: null,
   historicUsers: [],
+  countries: [],
   user: {
     ready: false,
     name: null,
@@ -19,6 +20,11 @@ export default function (state = initialState, action) {
     case UPDATE_DATA:
       var duplicateState = Object.assign({}, state)
       duplicateState.user[action.id] = action.data
+      return duplicateState
+
+    case UPDATE_COUNTRIES:
+      var duplicateState = Object.assign({}, state)
+      duplicateState.countries = action.data
       return duplicateState
 
     case UPDATE_DATA_TO_SHOW:

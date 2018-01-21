@@ -8,29 +8,23 @@ class InputCountry extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            countries: [],
-            country: ""
+            countries: []
         }
+        this.props.getCountries()
         this.handleChange = this.handleChange.bind(this);
+        this.CountriesOptions = this.CountriesOptions.bind(this);
     }
 
-    componentDidMount() {
-        api('https://restcountries.eu/rest/v2/all')
-            .then(([response, json]) => {
-                this.props.updateData(json[0].name, 'country');
-                this.setState({
-                    countries: json.map((element, index) => {
-                        return (
-                            <option key={index} value={element.name}>{element.name}</option>
-                        )
-                    })
-                });
-
-            }).catch((err) => console.log(err))
+    CountriesOptions() {
+        return this.props.userApp.countries.map((element, index) => {
+            return (
+                <option key={index} value={element.name}>{element.name}</option>
+            )
+        })
     }
+
     handleChange(event) {
         this.props.updateData(event.target.value, 'country');
-        this.setState({ country: event.target.value });
     }
 
     render() {
@@ -41,7 +35,7 @@ class InputCountry extends Component {
                 </Col>
                 <Col md={8} className="cCol">
                     <select onChange={this.handleChange} value={this.state.country} className="cSelect">
-                        {this.state.countries}
+                        <this.CountriesOptions />
                     </select>
                 </Col>
             </label>
