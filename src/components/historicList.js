@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.scss';
+//import '../App.scss';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 class HistoricList extends Component {

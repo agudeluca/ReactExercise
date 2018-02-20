@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import '../App.scss';
+//import '../App.scss';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import FormUser from '../components/form';

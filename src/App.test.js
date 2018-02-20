@@ -1,8 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+import TestComponent from './components/testComponent'
+
+describe('my beverage', () => {
+  let wrapper
+  beforeEach(() => {
+    wrapper = shallow(<TestComponent />);
+  });
+
+  it('renders without crashing', () => {
+    const value = 2 + 2;
+    expect(wrapper.find("h1")).toHaveLength(1);
+ 
+    
+  });
+
 });
+
