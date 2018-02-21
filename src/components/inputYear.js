@@ -19,7 +19,6 @@ class InputName extends Component {
     render() {
         return (
             <label className="clabel">
-            <TestComponent/>
                 <Col className="cCol" md={4}>Edad:</Col>
                 <Col md={8} className="cCol">
                     <input className="cInput" type="number" onChange={this.handleChange} value={this.state.age} />
