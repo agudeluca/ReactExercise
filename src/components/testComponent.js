@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 export default class TestComponent extends Component {
     constructor(props) {
         super(props)
@@ -7,6 +8,7 @@ export default class TestComponent extends Component {
         return "stringTest"
     }
     render() {
+        console.log(this)
         return (
             <div>
                 <h1>Hola</h1>
@@ -15,4 +17,14 @@ export default class TestComponent extends Component {
             </div>
         );
     }
+    
+}
+TestComponent.defaultProps = {
+    name: 'Stranger'
+    };
+    
+TestComponent.propTypes  = {
+    age: PropTypes.number,
+    objeto: PropTypes.object,
+    name: PropTypes.string
 }

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import TestComponent from './testComponent'
 class InputName extends Component {
     constructor(props) {
         super(props)
