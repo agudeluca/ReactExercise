@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { Col } from 'react-bootstrap';
 import * as actions from '../actions';
 import { Button } from 'react-bootstrap';
-class FormUser extends Component {
+export class FormUser extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             name: undefined,
             age: undefined,
@@ -16,6 +17,7 @@ class FormUser extends Component {
             date: new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getFullYear(),
             year: new Date().getFullYear()
         }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.countriesOptions = this.countriesOptions.bind(this);
     }
@@ -33,6 +35,7 @@ class FormUser extends Component {
         this.props.setHistoric(this.state);
     }
     render() {
+        console.log(this)
         return (
             <form>
                 <label className="clabel">
@@ -51,7 +54,7 @@ class FormUser extends Component {
                         <select
                             onChange={(e) => this.setState({ country: e.target.value })}
                             value={this.state.country} className="cSelect">
-                            <this.countriesOptions />
+                            {this.countriesOptions()}
                         </select>
                     </Col>
                 </label>
@@ -68,7 +71,12 @@ class FormUser extends Component {
         );
     }
 }
+
+
+// FormUser.Container.js
+
 const mapStateToProps = state => {
     return { userApp: state.userApp }
 }
+
 export default connect(mapStateToProps, actions)(FormUser)

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import '../App.scss';
 import { connect } from 'react-redux';
 import { updateDataToShow, getCountries } from '../actions';
-import TestComponent from './testComponent'
 class HistoricList extends Component {
     constructor(props) {
         super(props)
@@ -24,8 +23,6 @@ class HistoricList extends Component {
                     )
                 })}
                 <div>
-
-                    <TestComponent name="byprops" age={24} object={{ 'a': '1' }} />
                 </div>
             </div>
 
