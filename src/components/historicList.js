@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import '../App.scss';
 import { connect } from 'react-redux';
-import  {updateDataToShow,getCountries}  from '../actions';
+import { updateDataToShow, getCountries } from '../actions';
 import TestComponent from './testComponent'
 class HistoricList extends Component {
     constructor(props) {
@@ -9,10 +9,10 @@ class HistoricList extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(element) {
+
         this.props.updateDataToShow(element);
     }
     render() {
-        console.log(this);
         return (
             <div className="container">
                 <b>Visitantes anteriores</b>
@@ -24,7 +24,8 @@ class HistoricList extends Component {
                     )
                 })}
                 <div>
-                    <TestComponent name="byprops" age={24} objeto={{'a':'1'}} />
+
+                    <TestComponent name="byprops" age={24} object={{ 'a': '1' }} />
                 </div>
             </div>
 
@@ -32,12 +33,12 @@ class HistoricList extends Component {
     }
 }
 
-function bindActions (dispatch) {
+function bindActions(dispatch) {
     return {
-     updateDataToShow: () => dispatch(updateDataToShow()),
-      getCountries: () => dispatch(getCountries()),
-      };
-  }
+        updateDataToShow: (value) => dispatch(updateDataToShow(value)),
+        getCountries: () => dispatch(getCountries()),
+    };
+}
 
 const mapStateToProps = state => {
     return { userApp: state.userApp }

@@ -4,27 +4,27 @@ export default class TestComponent extends Component {
     constructor(props) {
         super(props)
     }
-    _functionToTest = () =>  {
+    _functionToTest = () => {
         return "stringTest"
     }
     render() {
-        console.log(this)
+
         return (
             <div>
-                <h1>Hola</h1>
-                <h1>Hola</h1>
-                <h1>Hola</h1>
+                <h1>Componente</h1>
+                <h1>a </h1>
+                <h1>testear</h1>
             </div>
         );
     }
-    
+
 }
 TestComponent.defaultProps = {
     name: 'Stranger'
-    };
-    
-TestComponent.propTypes  = {
+};
+
+TestComponent.propTypes = {
     age: PropTypes.number,
-    objeto: PropTypes.object,
+    object: PropTypes.object,
     name: PropTypes.string
 }

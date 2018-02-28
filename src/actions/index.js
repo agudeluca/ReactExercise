@@ -1,17 +1,17 @@
-import { UPDATE_ARRAY, UPDATE_DATA_TO_SHOW, UPDATE_DATA,UPDATE_COUNTRIES, URL_GET_COUNTRIES } from '../constants'
+import { UPDATE_ARRAY, UPDATE_DATA_TO_SHOW, UPDATE_DATA, UPDATE_COUNTRIES, URL_GET_COUNTRIES } from '../constants'
 import api from '../services/api'
-export const setHistoric = () => {
+export const setHistoric = (userForm) => {
     return (dispatch, getState) => {
-        dispatch(updateData(true, 'ready'));
-        dispatch(updateArray(getState().userApp.user));
-        dispatch(updateDataToShow(getState().userApp.user));
+        dispatch(updateData(userForm));
+        dispatch(updateArray(userForm));
+        dispatch(updateDataToShow(userForm));
     }
 }
 export const getCountries = () => {
     return (dispatch, getState) => {
         api(URL_GET_COUNTRIES)
             .then(([header, body]) => {
-               dispatch(updateCountries(body))
+                dispatch(updateCountries(body))
             }).catch((err) => console.log(err))
     }
 }

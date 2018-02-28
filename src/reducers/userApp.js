@@ -1,40 +1,39 @@
-import { UPDATE_DATA, UPDATE_ARRAY, UPDATE_DATA_TO_SHOW,UPDATE_COUNTRIES } from '../constants'
+import { UPDATE_DATA, UPDATE_ARRAY, UPDATE_DATA_TO_SHOW, UPDATE_COUNTRIES } from '../constants'
 const initialState = {
   userToShow: null,
   historicUsers: [],
   countries: [],
-  user: {
-    ready: false,
-    name: null,
-    age: null,
-    day: new Date().getDate(),
-    month: (new Date().getMonth() + 1),
-    country: null,
-    date: new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getFullYear(),
-    year: new Date().getFullYear()
-  }
+  user: {}
 }
 export default function (state = initialState, action) {
   switch (action.type) {
 
     case UPDATE_DATA:
-      var duplicateState = Object.assign({}, state)
-      duplicateState.user[action.id] = action.data
-      return duplicateState
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          name: action.data.name,
+          age: action.data.age,
+          country: action.data.country,
+          ready: true
+        }
+      }
 
     case UPDATE_COUNTRIES:
-      var duplicateState = Object.assign({}, state)
-      duplicateState.countries = action.data
-      return duplicateState
+      return {
+        ...state,
+        countries: action.data
+      }
 
     case UPDATE_DATA_TO_SHOW:
-      var duplicateState = Object.assign({}, state)
-      duplicateState.userToShow = Object.assign({}, action.data)
-      return duplicateState
-
+      return {
+        ...state,
+        userToShow: action.data
+      }
     case UPDATE_ARRAY:
       var duplicateState = Object.assign({}, state)
-      duplicateState.historicUsers.push(Object.assign({}, action.data))
+      duplicateState.historicUsers.push(Object.assign({}, state.user))
       return duplicateState
 
     default:
