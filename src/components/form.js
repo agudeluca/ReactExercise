@@ -21,6 +21,7 @@ export class FormUser extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.countriesOptions = this.countriesOptions.bind(this);
     }
+
     countriesOptions() {
         return this.props.userApp.countries.map((element, index) => {
             return (
@@ -28,14 +29,17 @@ export class FormUser extends Component {
             )
         })
     }
-    componentWillMount() {
-        this.props.getCountries()
-    }
+
     handleSubmit() {
         this.props.setHistoric(this.state);
     }
+
+    componentWillMount() {
+        this.props.getCountries()
+    }
+
+
     render() {
-        console.log(this)
         return (
             <form>
                 <label className="clabel">
@@ -49,7 +53,7 @@ export class FormUser extends Component {
                 <label className="clabel">
                     <Col className="cCol" md={4}>
                         Pais:
-                </Col>
+                   </Col>
                     <Col md={8} className="cCol">
                         <select
                             onChange={(e) => this.setState({ country: e.target.value })}
