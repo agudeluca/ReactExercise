@@ -19,40 +19,24 @@ export class FormUser extends Component {
         this.countriesOptions = this.countriesOptions.bind(this);
     }
 
-<<<<<<< HEAD
 
     countriesOptions = () => {
-=======
-    countriesOptions() {
->>>>>>> eace714bc2ff5b47c78d66378ef8bdb2d6e03f45
         return this.props.userApp.countries.map((element, index) => {
             return (
                 <option key={index} value={element.name}>{element.name}</option>
             )
         })
     }
-<<<<<<< HEAD
     handleSubmit() {
         this.props.setHistoric(this.state);
     }
     componentWillMount() {
         this.props.getCountries()
+        this.props.getGenericApi()
     }
     
    
     
-=======
-
-    handleSubmit() {
-        this.props.setHistoric(this.state);
-    }
-
-    componentWillMount() {
-        this.props.getCountries()
-    }
-
-
->>>>>>> eace714bc2ff5b47c78d66378ef8bdb2d6e03f45
     render() {
         return (
             <form>
