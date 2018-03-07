@@ -7,33 +7,35 @@ import { Button } from 'react-bootstrap';
 export class FormUser extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             name: undefined,
             age: undefined,
-            country: "Afghanistan",
+            country: "Afghanistan", //por props
             day: new Date().getDate(),
             month: (new Date().getMonth() + 1),
             date: new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getFullYear(),
             year: new Date().getFullYear()
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.countriesOptions = this.countriesOptions.bind(this);
     }
-    countriesOptions() {
+
+
+    countriesOptions = () => {
         return this.props.userApp.countries.map((element, index) => {
             return (
                 <option key={index} value={element.name}>{element.name}</option>
             )
         })
     }
-    componentWillMount() {
-        this.props.getCountries()
-    }
     handleSubmit() {
         this.props.setHistoric(this.state);
     }
+    componentWillMount() {
+        this.props.getCountries()
+    }
+    
+   
+    
     render() {
         console.log(this)
         return (
@@ -66,7 +68,7 @@ export class FormUser extends Component {
                             value={this.state.age} />
                     </Col>
                 </label>
-                <Button className="cButton" onClick={this.handleSubmit} bsStyle="primary">Saludar</Button>
+                <Button className="cButton" onClick={(e) =>{this.handleSubmit(e)}} bsStyle="primary">Saludar</Button>
             </form>
         );
     }

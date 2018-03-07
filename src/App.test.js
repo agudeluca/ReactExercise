@@ -1,20 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme'
 import { FormUser } from './components/form'
-import configureMockStore from 'redux-mock-store'
 import { createStore } from 'redux';
-const middlewares = []
-const mockStore = configureMockStore(middlewares)
-const reducer = state => state;
-const dispatch = jest.fn();
-const store = {
-  ...createStore(reducer, {}),
-  dispatch,
-};
-describe('my beverage', () => {
+
+describe('my test', () => {
   let wrapper
   let instance
-  let getCountriesSpy;
+  let getCountriesSpy; //la referencia queda ligada.
   let userApp = {
     countries: [
       { 'name': 'ciudad1' },
@@ -23,7 +15,7 @@ describe('my beverage', () => {
     ]
   }
 
-  beforeEach(() => {
+  beforeAll(() => {
     getCountriesSpy = jest.fn()
     wrapper = shallow(<FormUser getCountries={getCountriesSpy} userApp={userApp} />);
     instance = wrapper.instance()
@@ -36,8 +28,13 @@ describe('my beverage', () => {
       // console.log(wrapper.debug())
       expect(wrapper.state('country')).toBe('Afghanistan');
     });
+   
+    
     it('render jsx', () => {
       expect(wrapper.find('form')).toHaveLength(1);
+      //si existe 
+      //props que recibe
+      //separar 
       expect(wrapper.find('label')).toHaveLength(3);
       expect(wrapper.find('Button')).toHaveLength(1);
       expect(wrapper.find('Col')).toHaveLength(6);
@@ -46,8 +43,9 @@ describe('my beverage', () => {
 
     });
   });
+
   describe('lifeCycle', () => {
-    it('should call getCountries on ComponentDidMount', () => {
+    it('should call getCountries on componentWillMount', () => {
       expect(instance.props.getCountries.mock.calls.length).toBe(1);
     });
   });

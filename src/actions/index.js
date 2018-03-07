@@ -13,7 +13,19 @@ export const getCountries = () => {
             .then(([header, body]) => {
                 dispatch(updateCountries(body))
             }).catch((err) => console.log(err))
+        
     }
+}
+
+export const getGenericApi = () => {
+    console.log('entra')
+    return (dispatch,getState) =>{
+        fetch('http://americanflightsapp-ydfw.cloudhub.io/flights', {method: 'GET'}).then( (data,response) =>{
+            console.log(data),
+            console.log(response)
+        })
+    }
+
 }
 
 export const updateDataToShow = (data) => {
