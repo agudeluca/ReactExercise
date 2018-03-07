@@ -30,7 +30,6 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.0",
     "jest-enzyme": "^4.2.0",
-    "redux-mock-store": "^1.5.1",
     "regenerator-runtime": "^0.11.1"
   }
 }

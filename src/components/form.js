@@ -19,14 +19,19 @@ export class FormUser extends Component {
         this.countriesOptions = this.countriesOptions.bind(this);
     }
 
+<<<<<<< HEAD
 
     countriesOptions = () => {
+=======
+    countriesOptions() {
+>>>>>>> eace714bc2ff5b47c78d66378ef8bdb2d6e03f45
         return this.props.userApp.countries.map((element, index) => {
             return (
                 <option key={index} value={element.name}>{element.name}</option>
             )
         })
     }
+<<<<<<< HEAD
     handleSubmit() {
         this.props.setHistoric(this.state);
     }
@@ -36,8 +41,19 @@ export class FormUser extends Component {
     
    
     
+=======
+
+    handleSubmit() {
+        this.props.setHistoric(this.state);
+    }
+
+    componentWillMount() {
+        this.props.getCountries()
+    }
+
+
+>>>>>>> eace714bc2ff5b47c78d66378ef8bdb2d6e03f45
     render() {
-        console.log(this)
         return (
             <form>
                 <label className="clabel">
@@ -51,7 +67,7 @@ export class FormUser extends Component {
                 <label className="clabel">
                     <Col className="cCol" md={4}>
                         Pais:
-                </Col>
+                   </Col>
                     <Col md={8} className="cCol">
                         <select
                             onChange={(e) => this.setState({ country: e.target.value })}
